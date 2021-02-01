@@ -1,0 +1,8 @@
+<template>
+    <div class={cellClass} data-day={theDate} data-date={theDateString} style={backgroundColor} onclick={handleDayClick}>
+        <template if:true={hasEventData}>
+            <h2 class={cellContentClass}>{day.day}</h2>        
+            
+        </template>        
+    </div>
+</template>

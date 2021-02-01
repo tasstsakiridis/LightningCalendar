@@ -1,0 +1,33 @@
+.cell {
+    height: 25px;
+}
+.cell-today {
+    background-color: #4286f4;
+    border: 1px solid #4286f4;
+    border-radius: 20px;
+    color: #fff;
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+}
+h2 {
+    font-size: 0.85em;
+}
+.day_this-month {
+    color: #333;
+}
+.day_other-month {
+    color: lightgray;
+}
+.no-events {
+    background-color: white;
+}
+.few-events {
+    background-color: gray;
+}
+.some-events {
+    background-color: orange;
+}
+.many-events {
+    background-color: blue;
+}

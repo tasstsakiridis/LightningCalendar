@@ -1,0 +1,63 @@
+<template>
+    <lightning-layout multiple-rows="true" class="template-body" vertical-align="stretch">
+        <template if:true={showHeader}>
+            <lightning-layout-item size="12" padding="around-small">
+                <lightning-layout vertical-align="center" horizontal-align="spread" pull-to-boundary="small" >
+                    <lightning-layout-item  flexibility="no-shrink" class="slds-m-left_medium">
+                        <span class="uppercase-text" style="text-align: center;">{monthName}, {currentYear}</span>                
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="no-shrink" padding="horizontal-small">
+                        <lightning-button-icon icon-name="utility:chevronleft" alternative-text="previous" size="small" onclick={moveToPrevMonth} class="slds-m-right_xx-small"></lightning-button-icon>                
+                        <lightning-button-icon icon-name="utility:chevronright" alternative-text="next" size="small" onclick={moveToNextMonth}></lightning-button-icon>                
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+        </template>
+
+        <lightning-layout-item size="12" padding="horizontal-small">
+            <table>
+                <thead>
+                    <template for:each={weekdays} for:item="d">
+                        <th key={d.name}>{d.abbreviation}</th>
+                    </template>                
+                </thead>
+                <tbody>
+                    <template if:true={calendarHasData}>
+                        <tr>
+                            <template for:each={calendar.week1} for:item="d" for:index="i">
+                                <td key={d.id} class="day-cell" colspan="5"><c-lightning-calendar-day day={d} index={i} calendar={calendar.week1}></c-lightning-calendar-day></td>
+                            </template>
+                        </tr>
+                        <tr>
+                            <template for:each={calendar.week2} for:item="d">
+                                <td key={d.id} class="day-cell"><c-lightning-calendar-day day={d} calendar={calendar.week2}></c-lightning-calendar-day></td>
+                            </template>
+                        </tr>
+                        <tr>
+                            <template for:each={calendar.week3} for:item="d">
+                                <td key={d.id} class="day-cell"><c-lightning-calendar-day day={d} calendar={calendar.week3}></c-lightning-calendar-day></td>
+                            </template>
+                        </tr>
+                        <tr>
+                            <template for:each={calendar.week4} for:item="d">
+                                <td key={d.id} class="day-cell"><c-lightning-calendar-day day={d} calendar={calendar.week4}></c-lightning-calendar-day></td>
+                            </template>
+                        </tr>
+                        <tr>
+                            <template for:each={calendar.week5} for:item="d">
+                                <td key={d.id} class="day-cell"><c-lightning-calendar-day day={d} calendar={calendar.week5}></c-lightning-calendar-day></td>
+                            </template>
+                        </tr>
+                        <template if:true={calendarHasSixWeeks}>
+                            <tr>
+                                <template for:each={calendar.week6} for:item="d">
+                                    <td key={d.id} class="day-cell"><c-lightning-calendar-day day={d} calendar={calendar.week6}></c-lightning-calendar-day></td>
+                                </template>
+                            </tr>
+                        </template>        
+                    </template>
+                </tbody>
+            </table>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

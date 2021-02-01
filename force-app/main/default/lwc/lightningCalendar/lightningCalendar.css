@@ -1,0 +1,26 @@
+.template-body {
+    height: 750px;
+}
+table {
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid #999;
+}
+th {
+    background-color: lightgray;
+    font-size: 1.15em;
+    color: gray;
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+td {
+    margin: 5px 5px 0 0;
+    text-align: right;
+    vertical-align: top;
+}
+.uppercase-text {
+    font-size: 1.25em;
+    text-transform: uppercase;
+}

@@ -1,0 +1,22 @@
+.cell {
+    height: 125px;
+    width: 125px;
+}
+.cell-today {
+    background-color: #4286f4;
+    border: 1px solid #4286f4;
+    border-radius: 20px;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    padding: 2px;
+}
+h2 {
+    font-size: 1.15em;
+}
+.day_this-month {
+    color: #333;
+}
+.day_other-month {
+    color: lightgray;
+}
